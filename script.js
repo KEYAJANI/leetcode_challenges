@@ -11,3 +11,19 @@ for (i = 0; i < nums.length; i++) {
     }
   }
 }
+
+
+// https://leetcode.com/problems/counter/ 6/1/2025
+// counter
+
+
+var createCounter = function (n) {
+  return function () {
+    return n++;
+  };
+};
+
+const counter = createCounter(10);
+counter(); // 10
+counter(); // 11
+counter(); // 12
