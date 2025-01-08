@@ -30,3 +30,11 @@ async function sleep(millis) {
 }
 let t = Date.now()
 sleep(100).then(() => console.log(Date.now() - t)) // 100
+
+//https://leetcode.com/submissions/detail/1501895952/
+//Return Length of Arguments Passed
+var argumentsLength = function(...args) {
+    return args.length
+};
+
+argumentsLength(1, 2, 3); // 3
