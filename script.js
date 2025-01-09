@@ -38,3 +38,38 @@ var argumentsLength = function(...args) {
 };
 
 argumentsLength(1, 2, 3); // 3
+
+// https://leetcode.com/submissions/detail/1503057832/
+// Add Two Numbers
+
+class ListNode {
+  constructor(val = 0, next = null) {
+    this.val = val;
+    this.next = next;
+  }
+}
+
+function addTwoNumbers(l1, l2) {
+  let dummyHead = new ListNode(); 
+  let current = dummyHead; 
+  let carry = 0; 
+
+  while (l1 || l2 || carry) {
+    let val1 = l1 ? l1.val : 0;
+    let val2 = l2 ? l2.val : 0;
+
+
+    let total = val1 + val2 + carry;
+    carry = Math.floor(total / 10); 
+    current.next = new ListNode(total % 10); 
+
+
+    current = current.next;
+    if (l1) l1 = l1.next;
+    if (l2) l2 = l2.next;
+  }
+
+  return dummyHead.next; 
+}
+
+
